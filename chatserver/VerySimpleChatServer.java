@@ -49,6 +49,7 @@ public class VerySimpleChatServer {
 			while(it.hasNext()){
 				try{					
 					PrintWriter writer = (PrintWriter) it.next();
+					writer.println(message);
 					writer.flush();
 					
 				} catch (Exception ex){
@@ -62,7 +63,7 @@ public class VerySimpleChatServer {
 			clientOutputStreams = new ArrayList();
 			try{
 				
-				ServerSocket serverSock = new ServerSocket(8045);
+				ServerSocket serverSock = new ServerSocket(8049);
 				
 				while(true){
 					Socket clientSocket = serverSock.accept();
